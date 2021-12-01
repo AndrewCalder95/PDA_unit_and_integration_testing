@@ -11,7 +11,6 @@ describe("Calculator", () => {
   it('should update display when number buttons are clicked', () => {
     cy.get('#number2').click();
     cy.get('#number4').click();
-    // const commentListItems = cy.get('#running_total> li')
     cy.get('#running-total').should('contain', '24')
   })
 
@@ -71,7 +70,7 @@ describe("Calculator", () => {
     cy.get('#running-total').should('contain', '3799800000000000')
   })
 
-  it('should return error when dividing 0 by 0', () => {
+  it('should return error when dividing by 0', () => {
     cy.get('#number2').click();
     cy.get('#operator-divide').click();
     cy.get('#number0').click();
